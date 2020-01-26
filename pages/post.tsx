@@ -14,7 +14,7 @@ function Index(props: any) {
   return (
     <div>
       <Page
-        siteTitle={`${CONFIG.siteTitle} - ${pageJson && pageJson.title}`}
+        title={`${CONFIG.siteTitle} | ${pageJson && pageJson.title}`}
         heroTitle={CONFIG.siteTitle}
         description={CONFIG.description}
         stylesheets={CONFIG.stylesheets as []}
@@ -23,6 +23,7 @@ function Index(props: any) {
         body={Body(pageJson)}
         copyright={CONFIG.copyright}
         siteId={CONFIG.siteId}
+        meta={pageJson.meta}
       />
     </div>
   )

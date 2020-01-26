@@ -27,6 +27,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "next-ga": "^2.3.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }

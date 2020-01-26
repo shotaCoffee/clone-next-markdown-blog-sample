@@ -13,7 +13,7 @@ function Index (props: any) {
   return (
     <div>
       <Page
-        siteTitle={`${CONFIG.siteTitle} - Index`}
+        title={`${CONFIG.siteTitle} - Index`}
         heroTitle={CONFIG.siteTitle}
         description={CONFIG.description}
         stylesheets={CONFIG.stylesheets as []}
@@ -32,8 +32,8 @@ function Body(props: any) {
   return (
     <div className="center mw6 pa3 pa4-ns">
       {postList.map((article, i) => {
-        const href = makeUrl(article)
-        const date = formatDate(article.date)
+        const href = makeUrl(article);
+        const date = formatDate(article.date);
         return (
           <PagePreview
             title={article.title}

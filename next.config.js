@@ -1,7 +1,6 @@
 const SUMMARY_JSON = require('./content/summary.json')
 
 module.exports = {
-
   exportPathMap: function() {
     const posts = {}
     const paths = {}
