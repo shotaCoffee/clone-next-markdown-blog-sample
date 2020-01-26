@@ -7,6 +7,7 @@ import { formatDate } from '../src/utils/date'
 import CONFIG from '../content/index.json'
 // @ts-ignore
 import SUMMARY_JSON from '../content/summary.json'
+import styled from 'styled-components';
 
 function Index(props: any) {
   const pageJson = props.pageJson
@@ -33,10 +34,10 @@ function Index(props: any) {
 
 function Body(props: any = {}) {
   return (
-    <div className="content center mw6 pa3 pa4-ns">
+    <StyledBody className="content center mw6 pa3 pa4-ns">
       <h1 className="mt0 lh-title">{props.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: props.bodyHtml }} />
-    </div>
+    </StyledBody>
   )
 }
 
@@ -59,3 +60,19 @@ Index.getInitialProps = async function (req: any) {
 }
 
 export default withRouter(Index)
+
+
+const StyledBody = styled.div`
+  * + * {
+    margin-top: 1rem;
+  }
+  ul, ol {
+    list-style-position: inside;
+  }
+  pre {
+    white-space: pre-wrap;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.6);
+    color: #FFF;
+  }
+`;
