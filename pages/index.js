@@ -7,7 +7,7 @@ import { makeUrl, filterPosts } from '../src/utils/content'
 import CONFIG from '../content/index.json'
 import SUMMARY_JSON from '../content/summary.json'
 
-function Index(props) {
+function Index (props) {
   return (
     <div>
       <Page
