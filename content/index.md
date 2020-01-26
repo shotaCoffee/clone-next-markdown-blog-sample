@@ -7,8 +7,8 @@ topLinks:
   - text: "Blog"
     href: "/"
   - text: "Github"
-    href: "https://github.com/tscanlin/"
+    href: "https://github.com/shotaCoffee/"
 backgroundClass: "bg-dark-gray"
-copyright: "Tim Scanlin"
+copyright: "shotaCoffee"
 siteId: ""
 ---

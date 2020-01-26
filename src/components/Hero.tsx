@@ -1,10 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import Link from 'next/link'
 
-function Hero(props) {
+interface IHero {
+  backgroundClass: string,
+  topLinks: ITopLinks[],
+  heroTitle: string,
+  subtitle: string,
+}
+
+export interface ITopLinks {
+  text: string,
+  href: string
+}
+
+function Hero(props: IHero) {
   return (
-    <div className={`relative tc ${props.backgroundClass}`}>
+    <div className={`relative tc ${props.backgroundClass ? props.backgroundClass : 'bg-mid-gray'}`}>
       <div className="mw7 center white pv4">
         <div className="pv4">
           <h1 className="f1 normal lh-title ma0 pa0">
@@ -38,20 +49,6 @@ function Hero(props) {
       </div>
     </div>
   )
-}
-
-Hero.propTypes = {
-  backgroundClass: PropTypes.string,
-  topLinks: PropTypes.array,
-  heroTitle: PropTypes.string,
-  subtitle: PropTypes.string,
-}
-
-Hero.defaultProps = {
-  backgroundClass: 'bg-mid-gray',
-  topLinks: [],
-  heroTitle: '',
-  subtitle: '',
 }
 
 export default Hero

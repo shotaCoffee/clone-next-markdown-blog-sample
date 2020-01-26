@@ -1,9 +1,15 @@
-export function makeUrl(article) {
+export interface IArticle {
+  dir: string,
+  base: string
+}
+
+export function makeUrl(article: IArticle) {
   return `${article.dir.split('content').join('')}/${article.base.split('.json').join('')}`
 }
 
-export function filterPosts(summaryJson) {
+export function filterPosts(summaryJson: any) {
   return summaryJson && summaryJson.fileMap && Object.keys(summaryJson.fileMap)
+    // @ts-ignore
     .filter((file) => {
       if (file.indexOf('content/posts') === 0) {
         return true

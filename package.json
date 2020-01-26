@@ -15,13 +15,16 @@
     "deploy": "npm run build:content && npm run build:export && mv out public",
     "server": "NODE_ENV=production node server.js"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "shotaCoffee",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^13.5.0",
+    "@types/react": "^16.9.19",
     "next": "^9.1.0",
-    "processmd": "^4.5.0"
+    "processmd": "^4.5.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
     "react": "^16.10.2",

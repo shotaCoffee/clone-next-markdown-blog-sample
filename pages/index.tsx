@@ -1,20 +1,22 @@
-import React from 'react'
+import * as React from 'react'
 import Page from '../src/components/Page'
 import PagePreview from '../src/components/PagePreview'
 import { formatDate } from '../src/utils/date'
 import { makeUrl, filterPosts } from '../src/utils/content'
 
+// @ts-ignore
 import CONFIG from '../content/index.json'
+// @ts-ignore
 import SUMMARY_JSON from '../content/summary.json'
 
-function Index (props) {
+function Index (props: any) {
   return (
     <div>
       <Page
         siteTitle={`${CONFIG.siteTitle} - Index`}
         heroTitle={CONFIG.siteTitle}
         description={CONFIG.description}
-        stylesheets={CONFIG.stylesheets}
+        stylesheets={CONFIG.stylesheets as []}
         topLinks={CONFIG.topLinks}
         backgroundClass={CONFIG.backgroundClass}
         body={Body({ summaryJson: SUMMARY_JSON })}
@@ -25,7 +27,7 @@ function Index (props) {
   )
 }
 
-function Body(props) {
+function Body(props: any) {
   const postList = filterPosts(props.summaryJson)
   return (
     <div className="center mw6 pa3 pa4-ns">

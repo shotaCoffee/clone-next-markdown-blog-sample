@@ -1,7 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 
-function Footer(props) {
+export interface IFooter {
+  copyright: string
+}
+
+function Footer(props: IFooter) {
   const now = new Date()
 
   return (
@@ -13,10 +16,6 @@ function Footer(props) {
       </p>
     </footer>
   )
-}
-
-Footer.propTypes = {
-  copyright: PropTypes.string.isRequired,
 }
 
 export default Footer
