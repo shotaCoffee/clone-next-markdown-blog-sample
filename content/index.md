@@ -1,6 +1,6 @@
 ---
-siteTitle: "Next Blog"
-description: "A blog built using next and processmd"
+siteTitle: "shotaCoffee"
+description: ""
 stylesheets:
   - "https://unpkg.com/tachyons@4.7.4/css/tachyons.min.css"
 topLinks:
