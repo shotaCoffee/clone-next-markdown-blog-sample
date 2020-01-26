@@ -22,6 +22,10 @@ function Index (props: any) {
         body={Body({ summaryJson: SUMMARY_JSON })}
         copyright={CONFIG.copyright}
         siteId={CONFIG.siteId}
+        image={''}
+        keywords={props.keywords}
+        meta={[]}
+        url={props.url}
       />
     </div>
   )

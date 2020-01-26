@@ -10,6 +10,7 @@ import SUMMARY_JSON from '../content/summary.json'
 
 function Index(props: any) {
   const pageJson = props.pageJson
+  console.log('pageJson', pageJson)
 
   return (
     <div>
@@ -24,7 +25,9 @@ function Index(props: any) {
         copyright={CONFIG.copyright}
         siteId={CONFIG.siteId}
         meta={pageJson.meta}
-      />
+        image={''}
+        keywords={pageJson.keywords}
+        url={pageJson.url} />
     </div>
   )
 }

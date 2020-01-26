@@ -1,10 +1,10 @@
 import * as React from 'react'
 import Head from 'next/head'
 
-interface IHeader {
+export interface IHeader {
   title: string,
   description: string,
-  keyword: string,
+  keywords: string,
   image: string,
   url: string
   stylesheets: string[],
@@ -18,12 +18,13 @@ export const defaultKeyword = 'フロントエンド, Angular, React, Vue, VuePr
 export const defaultUrl = '';
 
 function Header(props: IHeader) {
+  console.log('header props', props)
   return (
     <Head>
       <title>{props.title}</title>
       <meta property="og:title" content={props.title} />
       <meta property="og:description" content={props.description} />
-      <meta name="keywords" content={props.keyword} />
+      <meta name="keywords" content={props.keywords} />
       <meta property="og:type" content="blog" />
       <meta property="og:url" content={props.url} />
       <meta property="og:image" content={props.image} />

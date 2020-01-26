@@ -1,22 +1,21 @@
 import * as React from 'react'
-import Header, {defaultKeyword, defaultStyleSheets, defaultUrl} from './Header'
+import Header, {defaultKeyword, defaultStyleSheets, defaultUrl, IHeader} from './Header'
 import Hero, {ITopLinks} from './Hero'
 import Footer from './Footer'
-import Tracking from './Tracking'
+import Tracking, {ITracking} from './Tracking'
 
-interface IPage {
-  title: string,
+export interface IHero {
   heroTitle: string,
-  description: string,
-  stylesheets?: [],
   topLinks?: ITopLinks[],
-  siteId: string,
-  body?: object,
-  copyright?: string,
   backgroundClass?: string,
-  keyword?: string
-  url?: string
-  meta?: []
+}
+
+export interface IFooter {
+  copyright?: string,
+}
+
+interface IPage extends IHero, IFooter, ITracking, IHeader {
+  body?: object,
 }
 
 function Page(props: IPage) {
@@ -26,8 +25,8 @@ function Page(props: IPage) {
         title={props.title}
         description={props.description}
         stylesheets={props.stylesheets ? props.stylesheets : defaultStyleSheets}
-        image={''}
-        keyword={props.keyword ? props.keyword : defaultKeyword}
+        image={props.image}
+        keywords={props.keywords ? props.keywords : defaultKeyword}
         url={props.url ? props.url : defaultUrl}
         meta={props.meta}
       />
@@ -42,9 +41,7 @@ function Page(props: IPage) {
         {props.body}
 
         <Footer copyright={props.copyright ? props.copyright : ''}/>
-        {props.siteId && (
-          <Tracking siteId={props.siteId}/>
-        )}
+        <Tracking siteId={props.siteId}/>
       </main>
     </div>
   )
