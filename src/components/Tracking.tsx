@@ -16,10 +16,23 @@ function getGaScript (siteId: string) {
 }
 
 function Tracking(props: ITracking) {
+  const scriptSrc = `https://www.googletagmanager.com/gtag/js?id=${props.siteId}`;
+  const scriptHtml = `window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '${props.siteId}');`;
   return (
-    <div>
-      <script dangerouslySetInnerHTML={{ __html: getGaScript(props.siteId) }} />
-    </div>
+    <>
+      <script
+        async
+        src={scriptSrc} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: scriptHtml,
+        }}
+      />
+        {/*<script dangerouslySetInnerHTML={{ __html: getGaScript(props.siteId) }} />*/}
+    </>
   )
 }
 

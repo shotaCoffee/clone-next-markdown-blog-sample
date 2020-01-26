@@ -18,7 +18,6 @@ export const defaultKeyword = 'フロントエンド, Angular, React, Vue, VuePr
 export const defaultUrl = '';
 
 function Header(props: IHeader) {
-  console.log('header props', props)
   return (
     <Head>
       <title>{props.title}</title>

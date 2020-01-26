@@ -10,7 +10,6 @@ import SUMMARY_JSON from '../content/summary.json'
 
 function Index(props: any) {
   const pageJson = props.pageJson
-  console.log('pageJson', pageJson)
 
   return (
     <div>

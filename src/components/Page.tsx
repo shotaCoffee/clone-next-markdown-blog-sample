@@ -19,6 +19,7 @@ interface IPage extends IHero, IFooter, ITracking, IHeader {
 }
 
 function Page(props: IPage) {
+  console.log('page props', props)
   return (
     <div>
       <Header
