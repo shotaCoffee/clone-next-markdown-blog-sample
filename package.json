@@ -22,7 +22,7 @@
     "@types/node": "^13.5.0",
     "@types/react": "^16.9.19",
     "@types/styled-components": "^4.4.2",
-    "next": "^9.1.0",
+    "next": "^11.1.3",
     "processmd": "^4.5.0",
     "react-pose": "^4.0.10",
     "styled-components": "^5.0.0",
